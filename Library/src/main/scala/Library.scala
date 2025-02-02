@@ -18,18 +18,17 @@ class Book {
 }
 
 class Catalogue {
-  var catalogue: mutable.ListBuffer[Book] = ???
+  var catalogue: List[Book] = ???
 }
 
 trait User {
-  var catalogue: mutable.ListBuffer[Book] = ???
+  var catalogue: List[Book] = ???
   var name: String = ???
 
   def browse(): List[Book] = ???
 }
 
 trait Librarian extends User {
-  var name: String = ???
 
   override def browse(): List[Book] = ???
   def addBook(newBook: Book): Unit = ???
@@ -38,7 +37,6 @@ trait Librarian extends User {
 }
 
 trait Member extends User {
-  var name: String = ???
 
   override def browse(): List[Book] = ???
   def borrowBook(book: Book): Unit = ???
