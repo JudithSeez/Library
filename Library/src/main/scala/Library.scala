@@ -1,3 +1,5 @@
+import scala.collection.mutable.ListBuffer
+
 class Deadline {
   var day: Int = ???
   var month: Int = ???
@@ -5,8 +7,8 @@ class Deadline {
 }
 
 enum Status {
-  case Taken(Deadline: Deadline, user: User) => ???
-  case Free() => ???
+  case Taken(Deadline: Deadline, user: User)
+  case Free()
 }
 
 class Book {
@@ -40,10 +42,10 @@ trait Member extends User {
 
   override def browse(): List[Book] = ???
   def borrowBook(book: Book): Unit = ???
-  def returnBook(book: Book)
+  def returnBook(book: Book): Unit = ???
   def deadline(book: Book): Deadline = ???
   def search(name: String): List[Book] = ???
-  notification(): String = ???
+  def notification(): String = ???
 }
 
 class LibrarianManager extends Librarian {
@@ -60,9 +62,9 @@ class memberManager extends Member {
 
   override def browse(): List[Book] = ???
   override def borrowBook(book: Book): Unit = ???
-  override def returnBook(book: Book)
+  override def returnBook(book: Book): Unit = ???
   override def deadline(book: Book): Deadline = ???
   override def search(name: String): List[Book] = ???
-  override notification(): String = ???
+  override def notification(): String = ???
 }
 
